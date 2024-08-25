@@ -1,0 +1,28 @@
+name: Invoke-Watson
+authors:
+  - name: 'Daniel Duggan'
+    handle: '@_RastaMouse'
+    link: 'https://twitter.com/_rastamouse'
+  - name: ''
+    handle: '@S3cur3Th1sSh1t'
+    link: https://twitter.com/ShitSecure
+description: Watson is a .NET tool designed to enumerate missing KBs and suggest exploits for Privilege Escalation vulnerabilities.
+software: ''
+tactics: []
+techniques:
+  - T1068
+background: true
+output_extension:
+needs_admin: false
+opsec_safe: true
+language: powershell
+min_language_version: '4'
+comments:
+  - https://github.com/rasta-mouse/Watson
+options:
+  - name: Agent
+    description: Agent to run module on.
+    required: true
+    value: ''
+script_path: privesc/Invoke-Watson.ps1
+script_end: Invoke-Watson | %{$_ + "`n"}; 'Invoke-Watson completed'

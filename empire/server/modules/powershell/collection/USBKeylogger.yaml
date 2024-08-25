@@ -1,0 +1,30 @@
+name: Get-USBKeyStrokes
+authors:
+  - name: ''
+    handle: '@Conjectural_hex'
+    link: ''
+  - name: ''
+    handle: '@CyberPoint_SRT'
+    link: ''
+description: Logs USB keys pressed using Event Tracing for Windows (ETW)
+software: ''
+tactics: []
+techniques:
+  - T1056
+background: true
+output_extension:
+needs_admin: true
+opsec_safe: true
+language: powershell
+min_language_version: '2'
+comments:
+  - https://github.com/CyberPoint/Ruxcon2016ETW/tree/master/KeyloggerPOC
+  - https://github.com/CyberPoint/ETWKeyLogger_PSE
+  - https://ruxcon.org.au/assets/2016/slides/ETW_16_RUXCON_NJR_no_notes.pdf
+options:
+  - name: Agent
+    description: Agent to run module on.
+    required: true
+    value: ''
+script_path: collection/Get-Keystrokes.ps1
+script_end: Get-USBKeystrokes {{ PARAMS }}

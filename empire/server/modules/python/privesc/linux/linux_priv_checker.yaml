@@ -1,0 +1,28 @@
+name: LinuxPrivChecker
+authors:
+  - name: ''
+    handle: '@sleventyeleven'
+    link: ''
+  - name: ''
+    handle: '@Cx01N'
+    link: ''
+description: This script is intended to be executed locally ona Linux box to enumerate basic system info, and search for commonprivilege
+  escalation vectors with pure python.
+software: ''
+tactics: []
+techniques:
+  - T1166
+background: true
+output_extension: ''
+needs_admin: false
+opsec_safe: false
+language: python
+min_language_version: '3'
+comments:
+  - 'https://github.com/sleventyeleven/linuxprivchecker'
+options:
+  - name: Agent
+    description: Agent to run on.
+    required: true
+    value: ''
+script_path: 'python/privesc/linuxprivchecker.py'

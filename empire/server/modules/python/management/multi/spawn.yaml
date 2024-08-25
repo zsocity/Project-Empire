@@ -1,0 +1,32 @@
+name: Spawn
+authors:
+  - name: Will Schroeder
+    handle: '@harmj0y'
+    link: https://twitter.com/harmj0y
+description: Spawns a new Empire agent.
+software: ''
+tactics: []
+techniques:
+  - T1050
+background: true
+output_extension: ''
+needs_admin: false
+opsec_safe: true
+language: python
+min_language_version: '3'
+comments: []
+options:
+  - name: Agent
+    description: Agent to execute module on.
+    required: true
+    value: ''
+  - name: Listener
+    description: Listener to use.
+    required: true
+    value: ''
+  - name: UserAgent
+    description: User-agent string to use for the staging request (default, none, or other).
+    required: false
+    value: default
+advanced:
+  custom_generate: true

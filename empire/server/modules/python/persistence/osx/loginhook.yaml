@@ -1,0 +1,33 @@
+name: LoginHook
+authors:
+  - name: ''
+    handle: '@Killswitch-GUI'
+    link: ''
+description: Installs Empire agent via LoginHook.
+software: ''
+tactics: []
+techniques:
+  - T1037
+background: false
+output_extension:
+needs_admin: false
+opsec_safe: false
+language: python
+min_language_version: '2.6'
+comments:
+  - https://support.apple.com/de-at/HT2420
+options:
+  - name: Agent
+    description: Agent to execute module on.
+    required: true
+    value: ''
+  - name: Password
+    description: User password for sudo.
+    required: true
+    value: ''
+  - name: LoginHookScript
+    description: Full path of the script to be executed/
+    required: true
+    value: /Users/Username/Desktop/kill-me.sh
+advanced:
+  custom_generate: true

